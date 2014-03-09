@@ -1,0 +1,4 @@
+task :build do
+  ENV['JEKYLL_ENV'] = 'production'  
+  sh "jekyll build"
+end

@@ -1,0 +1,157 @@
+#home
+  height 100%
+
+  #top
+    height 90%
+    position relative
+    box-sizing border-box
+    background #fff
+
+    #headshot
+      position absolute
+      height 100%
+      min-width 523px
+      width 50%
+      left 50%
+      image('/images/headshot.jpg')
+      background-size cover !important
+      background-position center center
+      background-repeat none
+
+    .grid
+      height 100%
+
+    #info
+      wrapper()
+      width 44%
+      box-sizing border-box
+      padding-top 6em
+
+      h1
+        GenathDisplay()
+        letter-spacing -0.025em
+        margin 0 0 .5em 0
+        color #4A6650
+        position relative
+        left -0.025em
+        font-size 9em
+        line-height 0.85em
+      
+      p
+        GenathBold()
+        color #59B55C
+        font-size 1.66em
+        line-height 2rem
+        a
+          color #4A6650
+          text-decoration none
+
+  .more
+    display block
+    text-align center
+    margin 0 auto
+    cursor pointer
+  
+  #photos
+    background #DDDFF0
+    padding 0
+    transition padding-bottom 0.25s ease-in-out
+
+    .more
+      color #fff
+      display none
+      position relative
+      line-height 3.75em
+      GenathBold()
+      font-size 2em
+      span
+        position relative
+        z-index 1
+      &:after
+        content ''
+        width 100%
+        height 100%
+        position absolute
+        top 0
+        left 0
+        background linear-gradient(bottom, rgba(0,0,0,.9), rgba(0,0,0,0))
+        transition opacity 0.25s ease-in-out
+      &:hover
+        color #F9B235
+        &:after
+          opacity 0.6
+
+    &.collapsed
+      height 36rem
+      .more
+        display block
+      &:hover
+        padding-bottom 7.5rem
+
+    ul
+      height 100%
+      display block
+      list-style none 
+      font-size 0
+      line-height 0
+
+    li
+      position relative
+      font-size 1rem
+      height 18em
+      width 25%
+      box-sizing border-box
+      margin 0
+      display inline-block
+      transition background-size 0.3s ease-out
+      overflow hidden
+      background #202026
+      cursor pointer
+
+      div
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+
+      .bg
+        background-size cover
+        background-position center center
+        background-repeat no-repeat
+        opacity 0.75
+        transition transform 0.3s ease-in-out, opacity 0.3s ease-in-out
+
+      &.hidden
+        display none
+
+      &:hover
+        .bg
+          transform scale(1.1)
+          opacity 1
+      
+  #recent
+    background #4A6650
+    padding 3em 0
+
+    h2
+      margin 0 auto
+      Genath()
+      hude()
+      text-align center
+      margin-bottom 1em
+
+    li
+      display block
+      height 10em
+      text-align center
+      box-sizing border-box
+      a
+        GenathBold()
+        color #B2D6B3
+        text-decoration none
+        hude()
+      
+      p
+        Karla()
+        font-size 1em
