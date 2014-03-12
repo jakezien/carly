@@ -5,6 +5,19 @@ title: Your New Jekyll Site
 
 <div id="home" class="page">
 
+  <div id="lightbox" class="hidden">
+    <div id="slides"></div>
+    <div id="close"></div>
+    <div id="prev" class="lightbox-control">
+      {% assign svg = 'arrow-l' %}
+      {% include svgs.html %}
+    </div>
+    <div id="next" class="lightbox-control">
+      {% assign svg = 'arrow-r' %}
+      {% include svgs.html %}      
+    </div>
+  </div>
+
   <section id="top">
     <div id="headshot"></div>
     <div class="grid">
@@ -17,7 +30,7 @@ title: Your New Jekyll Site
 
   <section id="photos" class="collapsed">
     <ul>
-      {% directory path:images %}
+      {% directory path:images/photos %}
         <li>
           <div class="bg" data-img="{{file.url}}"></div>
           <div class="caption"></div>
@@ -34,7 +47,7 @@ title: Your New Jekyll Site
         <li><a href="{{ post.url }}">{{ post.title }}</a><p>{{ post.date | date_to_string }}</p></li>
       {% endfor %}
     </ul>
-    <a class="more" href="/news">More news</a>
+    <a class="more" href="/news"><span class="underline">More news</span><span class="arrow"> &rArr;</span></a>
   </section>
 
   <script>

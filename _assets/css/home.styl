@@ -58,7 +58,7 @@
     transition padding-bottom 0.25s ease-in-out
 
     .more
-      color #fff
+      color #B4B7EE
       display none
       position relative
       line-height 3.75em
@@ -77,7 +77,7 @@
         background linear-gradient(bottom, rgba(0,0,0,.9), rgba(0,0,0,0))
         transition opacity 0.25s ease-in-out
       &:hover
-        color #F9B235
+        color #fff
         &:after
           opacity 0.6
 
@@ -120,38 +120,58 @@
         background-position center center
         background-repeat no-repeat
         opacity 0.75
-        transition transform 0.3s ease-in-out, opacity 0.3s ease-in-out
+        transition transform 0.3s ease-in-out,
+                   opacity 0.3s ease-in-out,
+                   -webkit-filter 0.3s ease-in-out
+        -webkit-filter grayscale(0.925)
+        backface-visibility hidden
 
       &.hidden
         display none
 
       &:hover
         .bg
-          transform scale(1.1)
+          transform scale(1.05)
           opacity 1
+          -webkit-filter grayscale(0)
+
       
   #recent
-    background #4A6650
+    background #CFE0CF
     padding 3em 0
+    color #4A6650
 
-    h2
+    h2, .more
       margin 0 auto
       Genath()
-      hude()
+      SmallCaps()
       text-align center
       margin-bottom 1em
+      font-size 2em
+      opacity 0.66
 
     li
       display block
-      height 10em
+      height 9em
       text-align center
       box-sizing border-box
       a
         GenathBold()
-        color #B2D6B3
+        color #4A6650
         text-decoration none
         hude()
       
       p
-        Karla()
-        font-size 1em
+        GenathBold()
+        SmallCaps()
+        font-size 1.25em
+        margin 0.5em
+        opacity 0.66
+
+    .more 
+      text-decoration none
+      color #4A6650
+      .arrow
+        font-size 0.8em
+        position relative
+        top 0.03em
