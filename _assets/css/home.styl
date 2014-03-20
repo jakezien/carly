@@ -175,3 +175,51 @@
         font-size 0.8em
         position relative
         top 0.03em
+
+@media screen and (max-width: 45em)
+
+  #home
+    #top
+      height auto
+      padding-bottom 3em
+      #headshot
+        min-width 100%
+        height 70%
+        width 100%
+        left 0
+      #info
+        padding-top 90%
+        width auto
+        h1
+          font-size 6em
+          position relative
+          top 50%
+          color #fff
+          text-align center
+        p
+          padding-top 1em
+
+    #photos
+      &.collapsed
+        height 24rem
+      li
+        width 50%
+        height 12rem
+        .bg
+          -webkit-filter none
+
+    #recent
+      font-size 0.8em
+      li a
+        letter-spacing -0.02em
+
+    footer
+      height auto
+
+    #contact, #resume
+      width 100%
+      h2
+        margin 0.5em 0
+
+    #resume
+      padding-bottom 2em
