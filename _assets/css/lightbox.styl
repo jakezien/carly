@@ -41,20 +41,21 @@
     width 3em
     height 3em
     cursor pointer
-
-  #prev, #next
-    top 50%
     opacity 0.35
     transition opacity 0.2s ease-in-out
     svg
       transition transform 0.2s ease-in-out
     &:hover
+      opacity 0.66
+    &:active
+      opacity 1
+
+  #prev, #next
+    top 50%
+    &:hover
       opacity 0.8
       svg
         transform translateX(-0.5em)
-
-    &:active
-      opacity 1
 
   #next
     right 1em
@@ -63,3 +64,10 @@
       svg
         transform translateX(0.5em)
 
+
+@media screen and (max-width: 45em)
+  
+  #lightbox
+    #close, #prev, #next
+      height 2em
+      width 2em

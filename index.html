@@ -8,6 +8,8 @@ title: Carly Zien
   <div id="lightbox" class="hidden">
     <div id="slides"></div>
     <div id="close">
+      {% assign svg = 'x' %}
+      {% include svgs.html %}
     </div>
     <div id="prev" class="lightbox-control">
       {% assign svg = 'arrow-l' %}
@@ -24,7 +26,13 @@ title: Carly Zien
     <div class="grid">
       <div id="info">
           <h1>Carly Zien</h1>
-          <p>will graduate with an MFA in Acting from the <a href='http://drama.yale.edu' target="_blank">Yale School of Drama</a> in May 2014.</p>
+          <p>will graduate with an MFA in Acting from the <a href='http://www.yale.edu/drama/showcase/index.html' target="_blank">Yale School of Drama</a> in May 2014.</p>
+          <div id="links">
+            <p>
+              <a href="#contact">Contact</a>
+              <a class="resume" href="/resume">R&eacute;sum&eacute;</a>
+            </p>
+          </div>
       </div>
     </div>
   </section>
@@ -41,7 +49,7 @@ title: Carly Zien
     <div id="more-photos" class="more"><span>More photos</span></div>
   </section>
 
-  <section id="recent">
+ <!--  <section id="recent">
     <ul class="container">
       <h2>Recent</h2>
       {% for post in site.posts limit: 3 %}
@@ -49,7 +57,7 @@ title: Carly Zien
       {% endfor %}
     </ul>
     <a class="more" href="/news"><span class="underline">More news</span><span class="arrow"> &rArr;</span></a>
-  </section>
+  </section> -->
 
   <script>
     $(Carly.home);

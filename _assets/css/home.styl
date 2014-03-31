@@ -31,7 +31,7 @@
         GenathDisplay()
         letter-spacing -0.025em
         margin 0 0 .5em 0
-        color #4A6650
+        color #59B55C
         position relative
         left -0.025em
         font-size 9em
@@ -39,12 +39,22 @@
       
       p
         GenathBold()
-        color #59B55C
+        color #4A6650
         font-size 1.66em
         line-height 2rem
-        a
-          color #4A6650
-          text-decoration none
+        position relative
+      a
+        color #59B55C
+        text-decoration none
+        transition color 0.15s ease
+        &:hover
+          color #CFE0CF
+
+      #links
+        margin-top 2em
+        display i
+        .resume
+          margin-left 1em
 
   .more
     display block
@@ -58,7 +68,7 @@
     transition padding-bottom 0.25s ease-in-out
 
     .more
-      color #B4B7EE
+      color #8888E8
       display none
       position relative
       line-height 3.75em
@@ -176,6 +186,7 @@
         position relative
         top 0.03em
 
+
 @media screen and (max-width: 45em)
 
   #home
@@ -198,6 +209,7 @@
           text-align center
         p
           padding-top 1em
+          top 0.5em
 
     #photos
       &.collapsed

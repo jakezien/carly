@@ -344,21 +344,50 @@ section {
   overflow: hidden;
 }
 footer {
-  height: 400px;
-  background: #5c5b79;
+  background: #7270b1;
+  padding-bottom: 4em;
 }
 footer .container {
-  text-align: justify;
+  text-align: center;
   height: 100%;
 }
-footer #contact,
-footer #resume {
+footer #contact {
   display: inline-block;
-  width: 49%;
   height: 100%;
 }
-footer #contact h2,
-footer #resume h2 {
+footer #contact a {
+  display: block;
+  font-family: "Genath-Bold", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  font-size: 1.66em;
+  margin: 0 0 1em 0;
+  color: #2b2a46;
+  -webkit-transition: 0.15s ease;
+  -moz-transition: 0.15s ease;
+  -o-transition: 0.15s ease;
+  -ms-transition: 0.15s ease;
+  transition: 0.15s ease;
+}
+footer #contact a:hover {
+  color: #ced0e8;
+}
+footer #contact h2 {
   font-family: "Genath-Bold", "Baskerville", "Georgia", "Times", serif;
   font-weight: 400;
   -moz-font-feature-settings: "onum" 1, "kern" 1;
@@ -381,6 +410,7 @@ footer #resume h2 {
   color: #ced0e8;
   padding-top: 0.5em;
   letter-spacing: -0.05em;
+  margin: 1em 0;
 }
 #home {
   height: 100%;
@@ -448,7 +478,7 @@ footer #resume h2 {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.025em;
   margin: 0 0 0.5em 0;
-  color: #4a6650;
+  color: #59b55c;
   position: relative;
   left: -0.025em;
   font-size: 9em;
@@ -472,13 +502,29 @@ footer #resume h2 {
   font-feature-settings: "kern" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #59b55c;
+  color: #4a6650;
   font-size: 1.66em;
   line-height: 2rem;
+  position: relative;
 }
-#home #top #info p a {
-  color: #4a6650;
+#home #top #info a {
+  color: #59b55c;
   text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  -o-transition: color 0.15s ease;
+  -ms-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+}
+#home #top #info a:hover {
+  color: #cfe0cf;
+}
+#home #top #info #links {
+  margin-top: 2em;
+  display: i;
+}
+#home #top #info #links .resume {
+  margin-left: 1em;
 }
 #home .more {
   display: block;
@@ -496,7 +542,7 @@ footer #resume h2 {
   transition: padding-bottom 0.25s ease-in-out;
 }
 #home #photos .more {
-  color: #b4b7ee;
+  color: #8888e8;
   display: none;
   position: relative;
   line-height: 3.75em;
@@ -760,6 +806,7 @@ footer #resume h2 {
   }
   #home #top #info p {
     padding-top: 1em;
+    top: 0.5em;
   }
   #home #photos.collapsed {
     height: 24rem;
@@ -866,10 +913,6 @@ footer #resume h2 {
   width: 3em;
   height: 3em;
   cursor: pointer;
-}
-#lightbox #prev,
-#lightbox #next {
-  top: 50%;
   opacity: 0.35;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
   filter: alpha(opacity=35);
@@ -879,6 +922,7 @@ footer #resume h2 {
   -ms-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
+#lightbox #close svg,
 #lightbox #prev svg,
 #lightbox #next svg {
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
@@ -886,6 +930,24 @@ footer #resume h2 {
   -o-transition: -o-transform 0.2s ease-in-out;
   -ms-transition: -ms-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
+}
+#lightbox #close:hover,
+#lightbox #prev:hover,
+#lightbox #next:hover {
+  opacity: 0.66;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=66)";
+  filter: alpha(opacity=66);
+}
+#lightbox #close:active,
+#lightbox #prev:active,
+#lightbox #next:active {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#lightbox #prev,
+#lightbox #next {
+  top: 50%;
 }
 #lightbox #prev:hover,
 #lightbox #next:hover {
@@ -901,12 +963,6 @@ footer #resume h2 {
   -ms-transform: translateX(-0.5em);
   transform: translateX(-0.5em);
 }
-#lightbox #prev:active,
-#lightbox #next:active {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
 #lightbox #next {
   right: 1em;
   left: auto;
@@ -917,4 +973,140 @@ footer #resume h2 {
   -o-transform: translateX(0.5em);
   -ms-transform: translateX(0.5em);
   transform: translateX(0.5em);
+}
+@media screen and (max-width: 45em) {
+  #lightbox #close,
+  #lightbox #prev,
+  #lightbox #next {
+    height: 2em;
+    width: 2em;
+  }
+}
+#resume {
+  font-family: "Genath-Regular", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 4em;
+}
+#resume header {
+  color: #4a6650;
+}
+#resume header .title {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  margin-right: 19%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+#resume header .title h1 {
+  font-weight: normal;
+  font-size: 6em;
+  line-height: 1em;
+  margin: 0.25em 0;
+  letter-spacing: -0.055em;
+}
+#resume header .contact-credentials {
+  margin-bottom: 1em;
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 30%;
+  display: inline-block;
+  vertical-align: bottom;
+  font-size: 1.25em;
+  line-height: 1.25em;
+}
+#resume header .contact-credentials a {
+  display: block;
+  text-decoration: none;
+  color: #59b55c;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  -o-transition: color 0.15s ease;
+  -ms-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+}
+#resume header .contact-credentials a:hover {
+  color: #cfe0cf;
+}
+#resume h2 {
+  margin: 1em 0 0 0;
+  font-size: 1.66em;
+  font-family: "Genath-Bold", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4a6650;
+}
+#resume td {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 1em;
+  vertical-align: top;
+  font-size: 1.2em;
+  letter-spacing: -0.015em;
+}
+#resume td:nth-child(1) {
+  width: 25%;
+}
+#resume td:nth-child(2) {
+  width: 12.5%;
+}
+#resume td:nth-child(3) {
+  width: 12.5%;
+}
+#resume td:nth-child(4) {
+  width: 12.5%;
+}
+#resume #site-footer {
+  display: none;
+}
+@media print {
+  #resume header .title h1 {
+    font-size: 4em;
+  }
+  #resume header .contact-credentials {
+    font-size: 1.1em;
+    line-height: 1.1em;
+  }
+  #resume h2 {
+    font-size: 1.1em;
+  }
+  #resume td {
+    padding-top: 0.1em;
+    font-size: 0.66em;
+  }
 }

@@ -11,20 +11,12 @@
         {% js  app %}
     </head>
     <body>
-        <header id="site-header"></header>
+        {% include site-header.html %}
 
         {{ content }}
 
-        <footer id="site-footer">
-          <div class="container justify">
-            <div id="contact" class="inline two">
-                <h2>Contact</h2>
-            </div>
-            <div id="resume" class="inline two">
-                <h2>R&eacute;sum&eacute;</h2>
-            </div>
-          </div>
-        </footer>
+        {% include site-footer.html %}
+
       </div><!--  end .page -->
     </body>
 </html>

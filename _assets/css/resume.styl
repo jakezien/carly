@@ -1,0 +1,76 @@
+#resume
+
+  Genath()
+  padding-bottom 4em
+
+  header
+    color #4A6650
+    .title
+      wrapper()
+      width 50%
+      margin-right 19%
+      display inline-block
+      vertical-align bottom
+      h1
+        font-weight normal
+        font-size 6em
+        line-height 1em
+        margin 0.25em 0
+        letter-spacing -0.055em
+    .contact-credentials
+      margin-bottom 1em
+      wrapper()
+      width 30%
+      display inline-block
+      vertical-align bottom
+      font-size 1.25em
+      line-height 1.25em
+      a
+        display block
+        text-decoration none
+        color #59B55C
+        transition color 0.15s ease
+        &:hover 
+          color #CFE0CF
+
+  h2
+    margin 1em 0 0 0
+    font-size 1.66em
+    GenathBold()
+    color #4A6650
+
+  td
+    wrapper()
+    padding-top 1em
+    vertical-align top
+    font-size 1.2em
+    letter-spacing -0.015em
+
+    &:nth-child(1)
+      width 25%
+    &:nth-child(2)
+      width 12.5%
+    &:nth-child(3)
+      width 12.5%
+    &:nth-child(4)
+      width 12.5%
+
+  #site-footer
+    display none
+
+@media print
+  #resume
+    header
+      .title
+        h1
+          font-size 4em
+      .contact-credentials
+        font-size 1.1em
+        line-height 1.1em
+
+    h2
+      font-size 1.1em
+
+    td
+      padding-top 0.1em
+      font-size 0.66em
