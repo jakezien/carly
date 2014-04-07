@@ -13,10 +13,12 @@
       min-width 523px
       width 50%
       left 50%
-      image('/images/headshot.jpg')
       background-size cover !important
       background-position center center
       background-repeat none
+      transition opacity 0.5s ease-out
+      &.loading
+        opacity 0
 
     .grid
       height 100%
@@ -132,7 +134,7 @@
         transition opacity 0.3s ease
       &.loading
         .bg
-          opacity 0
+          opacity 0 !important
         &:after
           opacity 1
           animation loading-pulse 2s infinite

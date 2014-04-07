@@ -494,20 +494,21 @@ footer #contact h2 {
   min-width: 523px;
   width: 50%;
   left: 50%;
-  background-image: url("/images/headshot.jpg");
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
   background-size: cover !important;
   background-position: center center;
   background-repeat: none;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
 }
-@media all and (-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
-  #home #top #headshot {
-    background-image: url("/images/headshot@2x.jpg");
-    -webkit-background-size: auto auto;
-    -moz-background-size: auto auto;
-    background-size: auto auto;
-  }
+#home #top #headshot.loading {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 #home #top .grid {
   height: 100%;
@@ -717,9 +718,9 @@ footer #contact h2 {
   transition: opacity 0.3s ease;
 }
 #home #photos li.loading .bg {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
+  opacity: 0 !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
+  filter: alpha(opacity=0) !important;
 }
 #home #photos li.loading:after {
   opacity: 1;
