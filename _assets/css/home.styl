@@ -6,9 +6,6 @@
     position relative
     box-sizing border-box
     background #fff
-    &.loading
-      #headshot 
-        opacity 0
 
     #headshot
       position absolute
@@ -16,10 +13,34 @@
       min-width 523px
       width 50%
       left 50%
-      background-size cover !important
-      background-position center center
-      background-repeat none
-      transition opacity 0.4s ease-out
+      background #fafafd
+      .bg
+        width 100%
+        height 100%
+        background-size cover !important
+        background-position center center
+        background-repeat none
+        transition opacity 0.4s ease-out
+      &:after
+        content: ''
+        display block
+        position absolute
+        width 1.5em
+        height 1.5em
+        border-radius 50%
+        background #B2D6B3
+        margin -.75em 0 0 -.75em
+        top 50%
+        left 50%
+        opacity 0
+        transition opacity 0.3s ease
+      &.loading
+        .bg
+          opacity 0
+        &:after
+          opacity 1
+          animation loading-pulse 2s infinite
+
 
     .grid
       height 100%

@@ -8,7 +8,7 @@ Carly.checkMobile = function() {
 
 Carly.preloadImg = function($el){
   var preload = new Image();
-  if ($el.attr('id') === 'headshot') {
+  if ($el.parent().attr('id') === 'headshot') {
     if (!Carly.checkMobile() && window.devicePixelRatio > 1.2)
       preload.src = '/images/headshot@2x.jpg';
     else
@@ -56,7 +56,7 @@ Carly.home = function(){
 
   var setupImages = function(){
 
-    Carly.preloadImg($('#headshot'));
+    Carly.preloadImg($('#headshot .bg'));
 
     var yaml = (function() {
       var yaml = null;
