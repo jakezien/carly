@@ -533,7 +533,7 @@ footer #contact h2 {
   cursor: pointer;
 }
 #home #photos {
-  background: #dddff0;
+  background: #202026;
   padding: 0;
   -webkit-transition: padding-bottom 0.25s ease-in-out;
   -moz-transition: padding-bottom 0.25s ease-in-out;
@@ -610,6 +610,7 @@ footer #contact h2 {
   list-style: none;
   font-size: 0;
   line-height: 0;
+  background: #202026;
 }
 #home #photos li {
   position: relative;
@@ -627,17 +628,51 @@ footer #contact h2 {
   -ms-transition: background-size 0.3s ease-out;
   transition: background-size 0.3s ease-out;
   overflow: hidden;
-  background: #202026;
   cursor: pointer;
 }
 #home #photos li div {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+}
+#home #photos li .caption {
+  bottom: 0;
+  padding: 0.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  font-size: 2em;
+  line-height: 1em;
+  font-family: "Genath-Regular", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ced0e8;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  -ms-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 #home #photos li .bg {
+  height: 100%;
+  top: 0;
+  left: 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -670,6 +705,11 @@ footer #contact h2 {
   -ms-filter: none;
   filter: none;
   -webkit-filter: grayscale(0);
+}
+#home #photos li:hover .caption {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 #home #recent {
   background: #cfe0cf;
@@ -782,7 +822,7 @@ footer #contact h2 {
   position: relative;
   top: 0.03em;
 }
-@media screen and (max-width: 45em) {
+@media screen and (max-width: 40em) {
   #home #top {
     height: auto;
     padding-bottom: 3em;
@@ -805,8 +845,10 @@ footer #contact h2 {
     text-align: center;
   }
   #home #top #info p {
-    padding-top: 1em;
-    top: 0.5em;
+    top: 1em;
+  }
+  #home #top #info #links {
+    margin-top: 1em;
   }
   #home #photos.collapsed {
     height: 24rem;

@@ -1,7 +1,11 @@
 var Carly = {};
 
-Carly.preloadImg = function(img){
-  img.onload = function(){
+Carly.preloadImg = function($el){
+  var preload = new Image();
+  preload.src = '/images/photos/' + $el.data().img;
+  $el.append(preload);
+
+  preload.onload = function(){
     // Is image size bigger than 0x0?
     if ('naturalHeight' in this) {
         if (this.naturalHeight + this.naturalWidth === 0) {
@@ -14,12 +18,16 @@ Carly.preloadImg = function(img){
     }
 
     // All good
-    $(this).parent().css('background-image','url(' + this.src + ')');
+    var $parent = $(this).parent();
+    $parent.css('background-image','url(' + this.src + ')');
+    if ($parent.data('bg-position')) {
+      $parent.css('background-position',$parent.data('bg-position'));
+    }
     if (this.naturalHeight > this.naturalWidth) $(this).parent().addClass('portrait');
 
     $(this).remove();
   };
-  img.onerror = function(){
+  preload.onerror = function(){
     $(this).remove();
   }
 }
@@ -32,17 +40,77 @@ Carly.home = function(){
   var currIndex = 0;
 
   var setupImages = function(){
+
+    var yaml = (function() {
+      var yaml = null;
+      $.ajax({
+        'async': false,
+        'global': false,
+        'url': "/images/photos.yml",
+        'success': function (data) {
+            yaml = data;
+        }
+      });
+      return yaml;
+    })();
+
+    var imgData = JSYAML.eval(yaml);
+
+    for (var i in imgData) {
+      var img = imgData[i];
+      addIndexPhoto(img);
+      addLightboxPhoto(img);
+    }
+
     $('#photos li .bg').each(function(i,el){
-      var $el = $(el);
-      if ( i >= 12 ) {
-        $el.css('display','none');
-        return;
+      if (i < 12) {
+        Carly.preloadImg($(el));
       }
-      var preload = new Image();
-      preload.src = $el.data().img;
-      Carly.preloadImg(preload);
-      $el.append(preload);
     })
+  }
+
+  var addIndexPhoto = function(img){
+    var $ul = $('#photos ul');
+    var $li = $('<li></li>');
+    var template = '<div class="bg" data-img="' + img.filename + '"></div>' +
+                   '<div class="caption"><p>' + img.play + '</p></div>';
+    
+    $li.append(template);
+    
+    if (img.bgPosition) {
+      var $bg = $li.children('.bg');
+      $bg.data('bg-position', img.bgPosition);
+    }
+
+    $ul.append($li);
+  }
+
+  var addLightboxPhoto = function(img){
+
+    var appendToCaption = function(key, elType, prefix){
+      if (img[key]) {
+        var el = document.createElement(elType);
+        el.innerHTML = prefix ? prefix + ' ' + img[key] : img[key];
+        el.className = key;
+        $caption[0].appendChild(el);
+      }
+    }
+
+    var $slides = $('#lightbox #slides');
+
+    var $slide = $('<div></div>');
+    var template = '<div class="bg" data-img="' + img.filename + '"></div>' +
+                   '<div class="caption"></div>';
+    $slide.append(template);
+
+    var $caption = $slide.children('.caption');
+    appendToCaption('play', 'h3');
+    appendToCaption('author', 'p', 'by');
+    appendToCaption('director', 'p', 'directed by');
+    appendToCaption('theater', 'p');
+    appendToCaption('photographer', 'p', 'photograph by');
+
+    $slides.append($slide);
   }
 
   var setupLightbox = function(){
@@ -55,8 +123,8 @@ Carly.home = function(){
         $('#lightbox #slides').append($div);
         if (i == 0) $div.addClass('active');
         var preload = new Image();
-        preload.src = $el.data().img;
-        Carly.preloadImg(preload);
+        // preload.src = $el.data().img;
+        // Carly.preloadImg(preload);
         $div.append(preload);
       });
       
@@ -151,15 +219,8 @@ Carly.home = function(){
 
   var revealImages = function(){
     $('#photos li .bg').each(function(i,el){
-      var $el = $(el);
-      if ( i < 12 ) {
-        return;
-      }
-      $el.css('display','inline-block');
-      var preload = new Image();
-      preload.src = $el.data().img;
-      Carly.preloadImg(preload);
-      $el.append(preload);
+      if ( i < 12 ) return;
+      Carly.preloadImg($(el));
     })
     $('#photos').removeClass('collapsed');
   }

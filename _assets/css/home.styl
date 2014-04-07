@@ -63,7 +63,7 @@
     cursor pointer
   
   #photos
-    background #DDDFF0
+    background #202026
     padding 0
     transition padding-bottom 0.25s ease-in-out
 
@@ -104,6 +104,7 @@
       list-style none 
       font-size 0
       line-height 0
+      background #202026
 
     li
       position relative
@@ -115,17 +116,28 @@
       display inline-block
       transition background-size 0.3s ease-out
       overflow hidden
-      background #202026
       cursor pointer
 
       div
         position absolute
-        top 0
-        left 0
         width 100%
-        height 100%
+
+      .caption
+        bottom 0
+        padding .5em
+        box-sizing border-box
+        opacity 0
+        font-size 2em
+        line-height 1em
+        Genath()
+        color #CED0E8
+        transition opacity 0.2s ease
+
 
       .bg
+        height 100%
+        top 0
+        left 0
         background-size cover
         background-position center center
         background-repeat no-repeat
@@ -144,6 +156,8 @@
           transform scale(1.05)
           opacity 1
           -webkit-filter grayscale(0)
+        .caption
+          opacity 1
 
       
   #recent
@@ -187,7 +201,7 @@
         top 0.03em
 
 
-@media screen and (max-width: 45em)
+@media screen and (max-width: 40em)
 
   #home
     #top
@@ -208,8 +222,9 @@
           color #fff
           text-align center
         p
-          padding-top 1em
-          top 0.5em
+          top 1em
+        #links 
+          margin-top 1em
 
     #photos
       &.collapsed
