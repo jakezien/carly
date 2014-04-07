@@ -4,6 +4,7 @@ Carly.preloadImg = function($el){
   var preload = new Image();
   preload.src = '/images/photos/' + $el.data().img;
   $el.append(preload);
+  $el.parent().addClass('loading');
 
   preload.onload = function(){
     // Is image size bigger than 0x0?
@@ -20,6 +21,7 @@ Carly.preloadImg = function($el){
     // All good
     var $parent = $(this).parent();
     $parent.css('background-image','url(' + this.src + ')');
+    $parent.parent().removeClass('loading')
     if ($parent.data('bg-position')) {
       $parent.css('background-position',$parent.data('bg-position'));
     }
@@ -73,7 +75,7 @@ Carly.home = function(){
     var $ul = $('#photos ul');
     var $li = $('<li></li>');
     var template = '<div class="bg" data-img="' + img.filename + '"></div>' +
-                   '<div class="caption"><p>' + img.play + '</p></div>';
+                   '<div class="caption"><p>' + (img.title ? img.title : img.play) + '</p></div>';
     
     $li.append(template);
     
@@ -98,7 +100,7 @@ Carly.home = function(){
 
     var $slides = $('#lightbox #slides');
 
-    var $slide = $('<div></div>');
+    var $slide = $('<div class="slide"></div>');
     var template = '<div class="bg" data-img="' + img.filename + '"></div>' +
                    '<div class="caption"></div>';
     $slide.append(template);
@@ -115,22 +117,6 @@ Carly.home = function(){
 
   var setupLightbox = function(){
 
-    var setup = function(){
-
-      $('#photos li .bg').each(function(i,el){
-        var $el = $(el);
-        var $div = $(document.createElement('div'));
-        $('#lightbox #slides').append($div);
-        if (i == 0) $div.addClass('active');
-        var preload = new Image();
-        // preload.src = $el.data().img;
-        // Carly.preloadImg(preload);
-        $div.append(preload);
-      });
-      
-      $slides = $('#lightbox #slides div');
-      if ($slides.length == 1) $div.addClass('active');
-    }
 
     var photoClicked = function(e){
       goToSlide($(this).index(), null, false);
@@ -141,30 +127,37 @@ Carly.home = function(){
       lastScroll = $(document).scrollTop();
       $('html').addClass('noscroll');
       $lightbox.removeClass('hidden');
+      setTimeout(function(){
+        $lightbox.removeClass('visually-hidden');
+      })
     }
 
     var hideLightbox = function(){
+      $lightbox.addClass('visually-hidden');
       $('html').removeClass('noscroll');
-      $lightbox.addClass('hidden');
       $(document).scrollTop(lastScroll);
+      setTimeout(function(){
+        $lightbox.addClass('hidden');
+        $lightbox.children('#slides').children().removeClass('active')
+      }, 350);
     }
 
     var goToSlide = function(slideNumber, direction, animated){
-      if (isAnimating) return;
-      if (slideNumber == currIndex) return;
-      if (slideNumber.data)
-        slideNumber = slideNumber.data.slideNumber;
-
+      if (isAnimating || slideNumber == currIndex) return;
+      if (slideNumber.data) slideNumber = slideNumber.data.slideNumber;
       if (arguments.length == 2) animated = true;
+
+      $slides = $('#lightbox #slides').children('div');
 
       var $currSlide = $($slides[currIndex]);
       var $nextSlide = $($slides[slideNumber]);
+
+      Carly.preloadImg($nextSlide.children('.bg'));
 
       if (!animated) {
         $currSlide.removeClass('active');
         $nextSlide.addClass('active');
       } else {
-
         isAnimating = true;
 
         if (!direction){
@@ -190,7 +183,6 @@ Carly.home = function(){
           $nextSlide.removeClass('left right no-animate');
           isAnimating = false;
         }, animated ? 500 : 100);
-
       }
 
       currIndex = slideNumber;
@@ -210,7 +202,6 @@ Carly.home = function(){
       goToSlide(index, -1);
     }
 
-    setup();
     $('#lightbox #close').click(hideLightbox);
     $('#lightbox #prev').click(prevSlide);
     $('#lightbox #next').click(nextSlide);

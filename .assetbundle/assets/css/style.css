@@ -412,6 +412,71 @@ footer #contact h2 {
   letter-spacing: -0.05em;
   margin: 1em 0;
 }
+@-moz-keyframes loading-pulse {
+  0% {
+    background: #b2d6b3;
+  }
+
+  50% {
+    background: #59b55c;
+  }
+
+  100% {
+    background: #b2d6b3;
+  }
+}
+@-webkit-keyframes loading-pulse {
+  0% {
+    background: #b2d6b3;
+  }
+
+  50% {
+    background: #59b55c;
+  }
+
+  100% {
+    background: #b2d6b3;
+  }
+}
+@-o-keyframes loading-pulse {
+  0% {
+    background: #b2d6b3;
+  }
+
+  50% {
+    background: #59b55c;
+  }
+
+  100% {
+    background: #b2d6b3;
+  }
+}
+@-ms-keyframes loading-pulse {
+  0% {
+    background: #b2d6b3;
+  }
+
+  50% {
+    background: #59b55c;
+  }
+
+  100% {
+    background: #b2d6b3;
+  }
+}
+@keyframes loading-pulse {
+  0% {
+    background: #b2d6b3;
+  }
+
+  50% {
+    background: #59b55c;
+  }
+
+  100% {
+    background: #b2d6b3;
+  }
+}
 #home {
   height: 100%;
 }
@@ -630,21 +695,56 @@ footer #contact h2 {
   overflow: hidden;
   cursor: pointer;
 }
+#home #photos li:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #b2d6b3;
+  margin: -0.75em 0 0 -0.75em;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+#home #photos li.loading .bg {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+#home #photos li.loading:after {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-animation: loading-pulse 2s infinite;
+  -moz-animation: loading-pulse 2s infinite;
+  -o-animation: loading-pulse 2s infinite;
+  -ms-animation: loading-pulse 2s infinite;
+  animation: loading-pulse 2s infinite;
+}
 #home #photos li div {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
 }
 #home #photos li .caption {
-  bottom: 0;
-  padding: 0.5em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  font-size: 2em;
-  line-height: 1em;
   font-family: "Genath-Regular", "Baskerville", "Georgia", "Times", serif;
   font-weight: 400;
   -moz-font-feature-settings: "onum" 1, "kern" 1;
@@ -663,16 +763,26 @@ footer #contact h2 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ced0e8;
-  -webkit-transition: opacity 0.2s ease;
-  -moz-transition: opacity 0.2s ease;
-  -o-transition: opacity 0.2s ease;
-  -ms-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+  position: relative;
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.75), rgba(0,0,0,0) 40%);
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,0.75), rgba(0,0,0,0) 40%);
+  background: -o-linear-gradient(bottom, rgba(0,0,0,0.75), rgba(0,0,0,0) 40%);
+  background: -ms-linear-gradient(bottom, rgba(0,0,0,0.75), rgba(0,0,0,0) 40%);
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0) 40%);
+}
+#home #photos li .caption p {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.5em;
+  line-height: 1em;
+  padding: 0.5em;
 }
 #home #photos li .bg {
-  height: 100%;
-  top: 0;
-  left: 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -889,9 +999,19 @@ footer #contact h2 {
   width: 100%;
   height: 100%;
   background: #000;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  -moz-transition: opacity 0.35s ease-in-out;
+  -o-transition: opacity 0.35s ease-in-out;
+  -ms-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
 }
 #lightbox.hidden {
   display: none;
+}
+#lightbox.visually-hidden {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 #lightbox #slides {
   width: 100%;
@@ -901,16 +1021,18 @@ footer #contact h2 {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-transition: -webkit-transform 0.33s ease-in-out;
-  -moz-transition: -moz-transform 0.33s ease-in-out;
-  -o-transition: -o-transform 0.33s ease-in-out;
-  -ms-transition: -ms-transform 0.33s ease-in-out;
-  transition: transform 0.33s ease-in-out;
+  -webkit-transition: -webkit-transform 0.33s ease-in-out, opacity 0.33s ease-in-out;
+  -moz-transition: -moz-transform 0.33s ease-in-out, opacity 0.33s ease-in-out;
+  -o-transition: -o-transform 0.33s ease-in-out, opacity 0.33s ease-in-out;
+  -ms-transition: -ms-transform 0.33s ease-in-out, opacity 0.33s ease-in-out;
+  transition: transform 0.33s ease-in-out, opacity 0.33s ease-in-out;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -939,12 +1061,129 @@ footer #contact h2 {
 #lightbox #slides div.active {
   display: block;
 }
+#lightbox #slides div.active .bg,
+#lightbox #slides div.active .caption {
+  display: block;
+}
 #lightbox #slides div.no-animate {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
   -ms-transition: none;
   transition: none;
+}
+#lightbox #slides div.slide:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #b2d6b3;
+  margin: -0.75em 0 0 -0.75em;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+#lightbox #slides div.slide.loading .bg {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+#lightbox #slides div.slide.loading:after {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-animation: loading-pulse 2s infinite;
+  -moz-animation: loading-pulse 2s infinite;
+  -o-animation: loading-pulse 2s infinite;
+  -ms-animation: loading-pulse 2s infinite;
+  animation: loading-pulse 2s infinite;
+}
+#lightbox #slides div.caption {
+  top: auto;
+  bottom: 0;
+  padding: 3em 2em 2em 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  color: rgba(206,208,232,0.7);
+  font-size: 1.25em;
+  line-height: 1.5em;
+  background-image: -moz--webkit-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -moz--moz-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -moz--o-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -moz--ms-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -moz-radial-gradient(to right top, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -webkit--webkit-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -webkit--moz-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -webkit--o-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -webkit--ms-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -webkit-radial-gradient(to right top, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -o--webkit-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -o--moz-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -o--o-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -o--ms-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -o-radial-gradient(to right top, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -ms--webkit-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -ms--moz-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -ms--o-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -ms--ms-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -ms-radial-gradient(to right top, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -webkit-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -moz-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -o-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: -ms-radial-gradient(left bottom, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  background-image: radial-gradient(to right top, ellipse farthest-side, #000, rgba(0,0,0,0) 100%);
+  font-family: "Genath-Regular", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#lightbox #slides div.caption h3 {
+  font-family: "Genath-Bold", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin: 0;
+  color: rgba(206,208,232,0.925);
 }
 #lightbox #close,
 #lightbox #prev,
@@ -990,6 +1229,7 @@ footer #contact h2 {
 #lightbox #prev,
 #lightbox #next {
   top: 50%;
+  margin-top: -1.5em;
 }
 #lightbox #prev:hover,
 #lightbox #next:hover {

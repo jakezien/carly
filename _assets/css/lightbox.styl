@@ -6,9 +6,13 @@
   width 100%
   height 100%
   background #000
+  transition opacity 0.35s ease-in-out
 
   &.hidden
     display none
+
+  &.visually-hidden
+    opacity 0
 
   #slides
     width 100%
@@ -17,10 +21,12 @@
       position absolute
       width 100%
       height 100%
+      top 0
+      left 0
       background-size cover
       background-position center center
       background-repeat no-repeat
-      transition transform 0.33s ease-in-out
+      transition transform 0.33s ease-in-out, opacity 0.33s ease-in-out
       backface-visibility hidden
       display none
       &.portrait
@@ -31,8 +37,57 @@
         transform translateX(100%)
       &.active
         display block
+        .bg, .caption
+          display block
       &.no-animate
         transition none
+
+      &.slide
+        &:after
+          content: ''
+          display block
+          position absolute
+          width 1.5em
+          height 1.5em
+          border-radius 50%
+          background #B2D6B3
+          margin -.75em 0 0 -.75em
+          top 50%
+          left 50%
+          opacity 0
+          transition opacity 0.3s ease
+        &.loading
+          .bg
+            opacity 0
+          &:after
+            opacity 1
+            animation loading-pulse 2s infinite
+
+
+
+
+      &.caption
+        top auto
+        bottom 0
+        padding 3em 2em 2em 2em
+        box-sizing border-box
+        height auto
+        color rgba(206,208,232,0.7)
+        font-size 1.25em
+        line-height 1.5em
+        background-image -moz-radial-gradient(left bottom, ellipse farthest-side, #000000, rgba(0, 0, 0, 0) 100%)
+        background-image -webkit-radial-gradient(left bottom, ellipse farthest-side, #000000, rgba(0, 0, 0, 0) 100%)
+        background-image -o-radial-gradient(left bottom, ellipse farthest-side, #000000, rgba(0, 0, 0, 0) 100%)
+        background-image -ms-radial-gradient(left bottom, ellipse farthest-side, #000000, rgba(0, 0, 0, 0) 100%)
+        background-image radial-gradient(left bottom, ellipse farthest-side, #000000, rgba(0, 0, 0, 0) 100%)
+        Genath()
+        h3
+          GenathBold()
+          font-weight normal
+          font-size 1.5rem
+          margin 0
+          color rgba(206,208,232,0.925)
+
 
   #close, #prev, #next
     position absolute
@@ -52,6 +107,7 @@
 
   #prev, #next
     top 50%
+    margin-top -1.5em
     &:hover
       opacity 0.8
       svg
