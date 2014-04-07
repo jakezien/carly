@@ -6,6 +6,9 @@
     position relative
     box-sizing border-box
     background #fff
+    &.loading
+      #headshot 
+        opacity 0
 
     #headshot
       position absolute
@@ -16,9 +19,7 @@
       background-size cover !important
       background-position center center
       background-repeat none
-      transition opacity 0.5s ease-out
-      &.loading
-        opacity 0
+      transition opacity 0.4s ease-out
 
     .grid
       height 100%
@@ -133,7 +134,7 @@
         opacity 0
         transition opacity 0.3s ease
       &.loading
-        .bg
+        .bg, .caption
           opacity 0 !important
         &:after
           opacity 1

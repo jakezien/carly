@@ -488,6 +488,11 @@ footer #contact h2 {
   box-sizing: border-box;
   background: #fff;
 }
+#home #top.loading #headshot {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
 #home #top #headshot {
   position: absolute;
   height: 100%;
@@ -504,11 +509,6 @@ footer #contact h2 {
   -o-transition: opacity 0.5s ease-out;
   -ms-transition: opacity 0.5s ease-out;
   transition: opacity 0.5s ease-out;
-}
-#home #top #headshot.loading {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
 }
 #home #top .grid {
   height: 100%;
