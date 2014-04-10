@@ -7,8 +7,16 @@
     box-sizing border-box
     background #fff
 
+    &.show-bio
+      #info
+        margin-left -100%
+      #bio
+        margin-left -5.555555555%
+
+
     #headshot
       position absolute
+      z-index 1
       height 100%
       min-width 523px
       width 50%
@@ -21,6 +29,15 @@
         background-position center center
         background-repeat none
         transition opacity 0.4s ease-out
+      .caption
+        position absolute
+        bottom 1em
+        padding 0 1em
+        width 90%
+        Genath()
+        font-size 1.25em
+        text-align right
+        color rgba(130,130,130,0.5)
       &:after
         content: ''
         display block
@@ -41,7 +58,6 @@
           opacity 1
           animation loading-pulse 2s infinite
 
-
     .grid
       height 100%
 
@@ -50,6 +66,7 @@
       width 44%
       box-sizing border-box
       padding-top 6em
+      transition margin-left 0.5s ease-in-out
 
       h1
         GenathDisplay()
@@ -57,6 +74,7 @@
         margin 0 0 .5em 0
         color #59B55C
         position relative
+        z-index 2
         left -0.025em
         font-size 9em
         line-height 0.85em
@@ -67,18 +85,54 @@
         font-size 1.66em
         line-height 2rem
         position relative
-      a
-        color #59B55C
-        text-decoration none
-        transition color 0.15s ease
-        &:hover
-          color #CFE0CF
 
       #links
         margin-top 2em
         display i
-        .resume
+        .contact, .resume
           margin-left 1em
+
+    #bio
+      position absolute
+      top 0
+      margin-left 50%
+      width 50%
+      height 90%
+      overflow-y scroll
+      padding 2em 0
+      GenathBold()
+      color #4A6650
+      transition margin-left 0.5s ease-in-out
+      &.active
+        margin-left -5.5555555555%
+      .grid
+        margin 0 11.1111111111%
+      p
+        font-size 1.25em
+        line-height 1.5em
+        margin 0 0 1em 0
+      .back
+        display block
+        GenathBold();
+        color #59B55C
+        text-decoration none
+        transition color 0.15s ease
+        position relative
+        &:before
+          content '\2190'
+          position absolute
+          left -1.5em
+        &:hover
+          color #CFE0CF 
+
+    #info, #bio
+      p
+        a
+          color #59B55C
+          text-decoration none
+          transition color 0.15s ease
+          &:hover
+            color #CFE0CF
 
   .more
     display block
@@ -117,10 +171,9 @@
 
     &.collapsed
       height 36rem
+      padding-bottom 7.5rem
       .more
         display block
-      &:hover
-        padding-bottom 7.5rem
 
     ul
       height 100%
@@ -194,7 +247,6 @@
                    opacity 0.3s ease-in-out,
                    -webkit-filter 0.3s ease-in-out
         -webkit-filter grayscale(0.925)
-        backface-visibility hidden
 
       &.hidden
         display none
@@ -213,7 +265,16 @@
     padding 3em 0
     color #4A6650
 
-    h2, .more
+    h2
+      GenathBold()
+      font-size 3em
+      text-align center
+      color #4A6650
+      padding-top 0.5em
+      letter-spacing -0.05em
+      margin 0 0 1em 0
+
+    .more
       margin 0 auto
       Genath()
       SmallCaps()
@@ -229,9 +290,13 @@
       box-sizing border-box
       a
         GenathBold()
-        color #4A6650
+        color #59B55C
         text-decoration none
-        hude()
+        font-size 3em
+        line-height 1em
+        transition color 0.15s ease
+        &:hover
+          color #4A665fff
       
       p
         GenathBold()
@@ -260,6 +325,8 @@
         height 70%
         width 100%
         left 0
+        .caption
+          display none
       #info
         padding-top 90%
         width auto
@@ -273,6 +340,12 @@
           top 1em
         #links 
           margin-top 1em
+          .bio
+            display none
+          .contact
+            margin-left 0
+      #bio
+        display none
 
     #photos
       &.collapsed
@@ -285,10 +358,12 @@
 
     #recent
       font-size 0.8em
+      padding 3em 0 8em 0
       li a
         letter-spacing -0.02em
 
     footer
+      font-size 0.8em
       height auto
 
     #contact, #resume

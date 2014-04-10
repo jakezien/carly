@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Showcase Presentations for YSD 2014"
+---
+
+<figure>
+  <img src="/images/photos/showcase.jpg">
+  <figcaption>Photo by Joan Marcus</figcaption>
+</figure>
+ 
+Carly and her classmates will be presenting their showcase this month in New York and Los Angeles. [Click here](http://www.yale.edu/drama/showcase/index.html) for dates, times, and RSVP information.

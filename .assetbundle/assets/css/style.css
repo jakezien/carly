@@ -344,7 +344,7 @@ section {
   overflow: hidden;
 }
 footer {
-  background: #7270b1;
+  background: #2b2a46;
   padding-bottom: 4em;
 }
 footer .container {
@@ -375,9 +375,9 @@ footer #contact a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: none;
-  font-size: 1.66em;
+  font-size: 2em;
   margin: 0 0 1em 0;
-  color: #2b2a46;
+  color: #7270b1;
   -webkit-transition: 0.15s ease;
   -moz-transition: 0.15s ease;
   -o-transition: 0.15s ease;
@@ -488,8 +488,15 @@ footer #contact h2 {
   box-sizing: border-box;
   background: #fff;
 }
+#home #top.show-bio #info {
+  margin-left: -100%;
+}
+#home #top.show-bio #bio {
+  margin-left: -5.555555555%;
+}
 #home #top #headshot {
   position: absolute;
+  z-index: 1;
   height: 100%;
   min-width: 523px;
   width: 50%;
@@ -509,6 +516,32 @@ footer #contact h2 {
   -o-transition: opacity 0.4s ease-out;
   -ms-transition: opacity 0.4s ease-out;
   transition: opacity 0.4s ease-out;
+}
+#home #top #headshot .caption {
+  position: absolute;
+  bottom: 1em;
+  padding: 0 1em;
+  width: 90%;
+  font-family: "Genath-Regular", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.25em;
+  text-align: right;
+  color: rgba(130,130,130,0.5);
 }
 #home #top #headshot:after {
   content: '';
@@ -559,6 +592,11 @@ footer #contact h2 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding-top: 6em;
+  -webkit-transition: margin-left 0.5s ease-in-out;
+  -moz-transition: margin-left 0.5s ease-in-out;
+  -o-transition: margin-left 0.5s ease-in-out;
+  -ms-transition: margin-left 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
 }
 #home #top #info h1 {
   font-family: "Genath-Display", "Baskerville", "Georgia", "Times", serif;
@@ -582,6 +620,7 @@ footer #contact h2 {
   margin: 0 0 0.5em 0;
   color: #59b55c;
   position: relative;
+  z-index: 2;
   left: -0.025em;
   font-size: 9em;
   line-height: 0.85em;
@@ -609,7 +648,95 @@ footer #contact h2 {
   line-height: 2rem;
   position: relative;
 }
-#home #top #info a {
+#home #top #info #links {
+  margin-top: 2em;
+  display: i;
+}
+#home #top #info #links .contact,
+#home #top #info #links .resume {
+  margin-left: 1em;
+}
+#home #top #bio {
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+  width: 50%;
+  height: 90%;
+  overflow-y: scroll;
+  padding: 2em 0;
+  font-family: "Genath-Bold", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4a6650;
+  -webkit-transition: margin-left 0.5s ease-in-out;
+  -moz-transition: margin-left 0.5s ease-in-out;
+  -o-transition: margin-left 0.5s ease-in-out;
+  -ms-transition: margin-left 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
+}
+#home #top #bio.active {
+  margin-left: -5.5555555555%;
+}
+#home #top #bio .grid {
+  margin: 0 11.1111111111%;
+}
+#home #top #bio p {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+}
+#home #top #bio .back {
+  display: block;
+  font-family: "Genath-Bold", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #59b55c;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  -o-transition: color 0.15s ease;
+  -ms-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+  position: relative;
+}
+#home #top #bio .back:before {
+  content: '\2190';
+  position: absolute;
+  left: -1.5em;
+}
+#home #top #bio .back:hover {
+  color: #cfe0cf;
+}
+#home #top #info p a,
+#home #top #bio p a {
   color: #59b55c;
   text-decoration: none;
   -webkit-transition: color 0.15s ease;
@@ -618,15 +745,9 @@ footer #contact h2 {
   -ms-transition: color 0.15s ease;
   transition: color 0.15s ease;
 }
-#home #top #info a:hover {
+#home #top #info p a:hover,
+#home #top #bio p a:hover {
   color: #cfe0cf;
-}
-#home #top #info #links {
-  margin-top: 2em;
-  display: i;
-}
-#home #top #info #links .resume {
-  margin-left: 1em;
 }
 #home .more {
   display: block;
@@ -699,12 +820,10 @@ footer #contact h2 {
 }
 #home #photos.collapsed {
   height: 36rem;
+  padding-bottom: 7.5rem;
 }
 #home #photos.collapsed .more {
   display: block;
-}
-#home #photos.collapsed:hover {
-  padding-bottom: 7.5rem;
 }
 #home #photos ul {
   height: 100%;
@@ -835,10 +954,6 @@ footer #contact h2 {
   -ms-transition: -ms-transform 0.3s ease-in-out, opacity 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
   -webkit-filter: grayscale(0.925);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 #home #photos li.hidden {
   display: none;
@@ -864,7 +979,31 @@ footer #contact h2 {
   padding: 3em 0;
   color: #4a6650;
 }
-#home #recent h2,
+#home #recent h2 {
+  font-family: "Genath-Bold", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 3em;
+  text-align: center;
+  color: #4a6650;
+  padding-top: 0.5em;
+  letter-spacing: -0.05em;
+  margin: 0 0 1em 0;
+}
 #home #recent .more {
   margin: 0 auto;
   font-family: "Genath-Regular", "Baskerville", "Georgia", "Times", serif;
@@ -924,11 +1063,18 @@ footer #contact h2 {
   font-feature-settings: "kern" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #4a6650;
+  color: #59b55c;
   text-decoration: none;
-/* 42px / 48px */
-  font-size: 2.625em;
-  line-height: 1.1428571428571428em;
+  font-size: 3em;
+  line-height: 1em;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  -o-transition: color 0.15s ease;
+  -ms-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+}
+#home #recent li a:hover {
+  color: #4a665f;
 }
 #home #recent li p {
   font-family: "Genath-Bold", "Baskerville", "Georgia", "Times", serif;
@@ -981,6 +1127,9 @@ footer #contact h2 {
     width: 100%;
     left: 0;
   }
+  #home #top #headshot .caption {
+    display: none;
+  }
   #home #top #info {
     padding-top: 90%;
     width: auto;
@@ -998,6 +1147,15 @@ footer #contact h2 {
   #home #top #info #links {
     margin-top: 1em;
   }
+  #home #top #info #links .bio {
+    display: none;
+  }
+  #home #top #info #links .contact {
+    margin-left: 0;
+  }
+  #home #top #bio {
+    display: none;
+  }
   #home #photos.collapsed {
     height: 24rem;
   }
@@ -1010,11 +1168,13 @@ footer #contact h2 {
   }
   #home #recent {
     font-size: 0.8em;
+    padding: 3em 0 8em 0;
   }
   #home #recent li a {
     letter-spacing: -0.02em;
   }
   #home footer {
+    font-size: 0.8em;
     height: auto;
   }
   #home #contact,
@@ -1027,6 +1187,155 @@ footer #contact h2 {
   }
   #home #resume {
     padding-bottom: 2em;
+  }
+}
+body.post {
+  background: #cfe0cf;
+}
+#post {
+  margin-left: 5.55555%;
+  margin-right: 5.55555%;
+  z-index: 0;
+  font-family: "Genath-Regular", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 4em 0 6em 0;
+  color: #213124;
+}
+#post .title {
+  font-family: "Genath-Regular", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 3.5em;
+  line-height: 1em;
+  letter-spacing: -0.033em;
+  color: #59b55c;
+  margin: 0;
+  max-width: 90%;
+}
+#post .meta {
+  font-size: 1.25em;
+  margin: 1em 0;
+  text-transform: lowercase;
+  -moz-font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  -moz-font-feature-settings: "onum=1 kern=1 smcp=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  color: #74a574;
+}
+#post .wrapper {
+  width: 75%;
+  margin-left: 12.25%;
+}
+#post .content .show {
+  background: #fff;
+  margin: 2em 0;
+  padding: 1.5em 2em 2em 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#post .content .show h3 {
+  font-family: "Genath-BoldIta", "Baskerville", "Georgia", "Times", serif;
+  font-weight: 400;
+  -moz-font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-feature-settings: "onum=1 kern=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1;
+  font-feature-settings: "onum" 1, "kern" 1;
+  -moz-font-variant-numeric: oldstyle-nums;
+  -ms-font-variant-numeric: oldstyle-nums;
+  -o-font-variant-numeric: oldstyle-nums;
+  -webkit-font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 2em;
+  line-height: 1.25em;
+  color: #4a6650;
+  margin: 0 0 0.25em 0;
+}
+#post .content .show p {
+  color: #4a6650;
+  font-size: 1.33em;
+}
+#post .content p {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: #213124;
+}
+#post .content p a {
+  color: #31982f;
+  text-decoration: none;
+  border-bottom: 1px solid #31982f;
+  -webkit-transition: color 0.15s ease, border-color 0.15s ease;
+  -moz-transition: color 0.15s ease, border-color 0.15s ease;
+  -o-transition: color 0.15s ease, border-color 0.15s ease;
+  -ms-transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+#post .content p a:hover {
+  color: #59b55c;
+  border-bottom-color: #59b55c;
+}
+#post figure {
+  margin: 2em 0;
+}
+#post figure figcaption {
+  font-size: 1.15em;
+  margin: 1em 0 0 0;
+  color: #74a574;
+  text-transform: lowercase;
+  -moz-font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  -moz-font-feature-settings: "onum=1 kern=1 smcp=1";
+  -ms-font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  -o-font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  -webkit-font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+  font-feature-settings: "onum" 1, "kern" 1, "smcp" 1;
+}
+@media screen and (max-width: 40em) {
+  #post {
+    padding-top: 2em;
+  }
+  #post .title {
+    max-width: 100%;
+  }
+  #post .wrapper {
+    width: 100%;
+    margin-left: 0;
   }
 }
 #lightbox {
@@ -1071,10 +1380,6 @@ footer #contact h2 {
   -o-transition: -o-transform 0.33s ease-in-out, opacity 0.33s ease-in-out;
   -ms-transition: -ms-transform 0.33s ease-in-out, opacity 0.33s ease-in-out;
   transition: transform 0.33s ease-in-out, opacity 0.33s ease-in-out;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: none;
 }
 #lightbox #slides div.portrait {
@@ -1300,6 +1605,39 @@ footer #contact h2 {
   #lightbox #next {
     height: 2em;
     width: 2em;
+  }
+  #lightbox #slides div.caption {
+    padding: 8em 2em 2em 2em;
+    font-size: 1em;
+    background-image: -moz--webkit-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -moz--moz-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -moz--o-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -moz--ms-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -moz-linear-gradient(to top, #000, rgba(0,0,0,0) 100%);
+    background-image: -webkit--webkit-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -webkit--moz-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -webkit--o-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -webkit--ms-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0) 100%);
+    background-image: -o--webkit-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -o--moz-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -o--o-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -o--ms-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -o-linear-gradient(to top, #000, rgba(0,0,0,0) 100%);
+    background-image: -ms--webkit-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -ms--moz-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -ms--o-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -ms--ms-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -ms-linear-gradient(to top, #000, rgba(0,0,0,0) 100%);
+    background-image: -webkit-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -moz-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -o-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: -ms-linear-gradient(bottom, #000, rgba(0,0,0,0) 100%);
+    background-image: linear-gradient(to top, #000, rgba(0,0,0,0) 100%);
+  }
+  #lightbox #slides div.caption h3 {
+    font-size: 1.25rem;
+    line-height: 1.1em;
   }
 }
 #resume {

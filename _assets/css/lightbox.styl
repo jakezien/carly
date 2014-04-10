@@ -27,7 +27,6 @@
       background-position center center
       background-repeat no-repeat
       transition transform 0.33s ease-in-out, opacity 0.33s ease-in-out
-      backface-visibility hidden
       display none
       &.portrait
         background-size contain
@@ -127,3 +126,16 @@
     #close, #prev, #next
       height 2em
       width 2em
+
+    #slides
+      div.caption
+        padding 8em 2em 2em 2em
+        font-size 1em
+        background-image -moz-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0) 100%)
+        background-image -webkit-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0) 100%)
+        background-image -o-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0) 100%)
+        background-image -ms-linear-gradient(bottom, #000000, rgba(0, 0, 0, 0) 100%)
+        background-image linear-gradient(bottom, #000000, rgba(0, 0, 0, 0) 100%)
+        h3
+          font-size 1.25rem
+          line-height 1.1em

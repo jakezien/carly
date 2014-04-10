@@ -19,7 +19,7 @@
         {% css style %}
         {% js app %}
     </head>
-    <body>
+    <body class="{{ page.bodyclass }}">
         {% include site-header.html %}
 
         {{ content }}

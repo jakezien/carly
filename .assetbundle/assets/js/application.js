@@ -52,7 +52,7 @@ Carly.home = function(){
   var $lightbox = $('#lightbox');
   var lastScroll = 0;
   var isAnimating = false;
-  var currIndex = 0;
+  var currIndex = null;
 
   var setupImages = function(){
 
@@ -121,12 +121,15 @@ Carly.home = function(){
     $slide.append(template);
 
     var $caption = $slide.children('.caption');
-    appendToCaption('play', 'h3');
-    appendToCaption('author', 'p', 'by');
-    appendToCaption('director', 'p', 'directed by');
-    appendToCaption('theater', 'p');
-    appendToCaption('photographer', 'p', 'photograph by');
-
+    if (img.title) {
+      appendToCaption('title', 'h3');
+    } else {
+      appendToCaption('play', 'h3');
+      appendToCaption('author', 'p', 'by');
+      appendToCaption('director', 'p', 'directed by');
+      appendToCaption('theater', 'p');
+      appendToCaption('photographer', 'p', 'photograph by');
+    }
     $slides.append($slide);
   }
 
@@ -235,6 +238,14 @@ Carly.home = function(){
   setupLightbox();
 
   $('#photos .more').click(revealImages);
+  $('#info .bio').click(function(e){
+    e.preventDefault();
+    $('#top').addClass('show-bio');
+  });
+  $('#bio .back').click(function(e){
+    e.preventDefault();
+    $('#top').removeClass('show-bio');
+  });
 }
 
 Carly.whichTransitionEvent = function(){
