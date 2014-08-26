@@ -246,7 +246,22 @@ Carly.home = function(){
     e.preventDefault();
     $('#top').removeClass('show-bio');
   });
-}
+
+  var $photos = $('#photos'),
+      timer;
+
+  window.addEventListener('scroll', function() {
+    clearTimeout(timer);
+    if(!$photos.hasClass('disable-hover')) {
+      $photos.addClass('disable-hover');
+    }
+    
+    timer = setTimeout(function(){
+      $photos.removeClass('disable-hover');
+    },50);
+  }, false);
+
+};
 
 Carly.whichTransitionEvent = function(){
     var t;
