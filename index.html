@@ -29,8 +29,10 @@ title: Carly Zien
     <div class="grid">
       <div id="info">
         <h1>Carly Zien</h1>
-        <p>will graduate with an MFA in Acting from the <a href='http://www.yale.edu/drama/showcase/index.html' target="_blank">Yale School of Drama</a> in May 2014.</p>
+        <p>MFA in Acting<p>
+        <p><a href='http://www.yale.edu/drama/showcase/index.html' target="_blank">Yale School of Drama</a> 2014</p>
         <div id="links">
+          <div class="keyline"></div>
           <p>
             <a class="bio" href="#">Bio</a>
             <a class="contact" href="#contact">Contact</a>
@@ -61,10 +63,15 @@ title: Carly Zien
 
   <section id="recent">
     <ul class="container">
-      <h2>Recent</h2>
-      {% for post in site.posts limit: 3 %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a><p>{{ post.date | date:"%B %d, %Y" }}</p></li>
-      {% endfor %}
+      <div class="border">
+        <div></div>
+      </div>
+      <div class="posts">
+        <h2>Recent</h2>
+        {% for post in site.posts limit: 3 %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a><p>{{ post.date | date:"%B %d, %Y" }}</p></li>
+        {% endfor %}
+      </div>
     </ul>
     <!-- <a class="more" href="/news"><span class="underline">More news</span><span class="arrow"> &rArr;</span></a> -->
   </section>

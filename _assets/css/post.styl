@@ -4,7 +4,7 @@ body.post
 #post
   grid()
   Genath()
-  padding 4em 0 6em 0
+  padding 4em 0 12em 0
   color #213124
 
   .title
@@ -17,14 +17,27 @@ body.post
     max-width 90%
 
   .meta
-    font-size 1.25em
-    margin 1em 0
-    SmallCaps()
-    color #74A574
+    position relative
+    margin 1em 0 1.5em 0
+    .keyline
+      width 100%
+      height 2px
+      position absolute
+      background #213124
+      top .9em
+    p
+      display inline-block
+      position relative
+      font-size 1.25em
+      margin 0
+      padding-right .5em
+      SmallCaps()
+      color #213124
+      background #CFE0CF
 
   .wrapper
-    width 75%
-    margin-left 12.25%
+    width 66%
+    margin-left 16.5%
 
   .content
 

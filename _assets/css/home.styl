@@ -88,7 +88,12 @@
 
       #links
         margin-top 2em
-        display i
+        display inline-block
+        .keyline
+          width 100%
+          height 2px
+          background #4A6650
+          margin 2em 0 1em 0
         .contact, .resume
           margin-left 1em
 
@@ -152,6 +157,7 @@
       line-height 3.75em
       GenathBold()
       font-size 2em
+      transition color 0.25s ease
       span
         position relative
         z-index 1
@@ -261,9 +267,29 @@
 
       
   #recent
-    background #CFE0CF
-    padding 3em 0
+    position relative
+    background #fff
+    padding 3em
     color #4A6650
+    min-height 75vh
+
+    .posts
+      position relative
+
+    .border, .border div
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      box-sizing border-box
+      border 24px solid transparent
+      border-width 8px
+      
+    .border div 
+      border 8px solid #59B55C
+        
+
 
     h2
       GenathBold()
@@ -296,7 +322,7 @@
         line-height 1em
         transition color 0.15s ease
         &:hover
-          color #4A665fff
+          color #CFE0CF
       
       p
         GenathBold()
@@ -358,9 +384,11 @@
 
     #recent
       font-size 0.8em
-      padding 3em 0 8em 0
-      li a
-        letter-spacing -0.02em
+      padding-bottom 8em
+      li 
+        margin-bottom 3em
+        a
+          letter-spacing -0.02em
 
     footer
       font-size 0.8em
