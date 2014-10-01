@@ -5,12 +5,14 @@
 
   header
     color #4A6650
+    .grid
+      position relative
     .title
       wrapper()
       width 50%
       margin-right 19%
       display inline-block
-      vertical-align bottom
+      vertical-align top
       h1
         font-weight normal
         font-size 6em
@@ -18,9 +20,13 @@
         margin 0.25em 0
         letter-spacing -0.055em
     .contact-credentials
+      border-top 2px solid #4A6650
+      border-bottom 2px solid #4A6650
       margin-bottom 1em
+      box-sizing border-box
       wrapper()
-      width 30%
+      padding-bottom 2em
+      width 100%
       display inline-block
       vertical-align bottom
       font-size 1.25em
@@ -74,3 +80,11 @@
     td
       padding-top 0.1em
       font-size 0.66em
+
+
+@media screen and (min-width: 560px)
+  #resume header .contact-credentials
+    div
+      width 32%
+      display inline-block
+      vertical-align top
