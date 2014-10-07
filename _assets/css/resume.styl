@@ -40,26 +40,32 @@
           color #CFE0CF
 
   h2
-    margin 1em 0 0 0
+    margin 1.5em 0 1em 0
     font-size 1.66em
     GenathBold()
     color #4A6650
 
   td
     wrapper()
-    padding-top 1em
-    vertical-align top
+    padding-top .5em
+    padding-bottom .5em
+    vertical-align middle
     font-size 1.2em
     letter-spacing -0.015em
 
     &:nth-child(1)
-      width 25%
+      width 20%
     &:nth-child(2)
       width 12.5%
     &:nth-child(3)
       width 12.5%
     &:nth-child(4)
       width 12.5%
+
+  tr
+    &:nth-child(odd)
+      background-color #F2FCF2
+      vertical-align middle
 
   #site-footer
     display none
