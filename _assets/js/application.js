@@ -125,6 +125,11 @@ Carly.home = function(){
                    '<div class="caption"></div>';
     $slide.append(template);
 
+    if (img.bgPosition) {
+      var $bg = $slide.children('.bg');
+      $bg.data('bg-position', img.bgPosition);
+    }
+
     var $caption = $slide.children('.caption');
     if (img.title) {
       appendToCaption('title', 'h3');
