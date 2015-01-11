@@ -75,7 +75,6 @@ Carly.home = function(){
 
     for (var i in imgData) {
       var img = imgData[i];
-      console.log(img)
       addIndexPhoto(img);
       addLightboxPhoto(img);
     }
@@ -90,8 +89,13 @@ Carly.home = function(){
   var addIndexPhoto = function(img){
     var $ul = $('#photos ul');
     var $li = $('<li></li>');
-    var template = '<div class="bg" data-img="' + img.filename + '"></div>' +
-                   '<div class="caption"><p>' + (img.title ? img.title : img.play) + '</p></div>';
+    var template = '<div class="bg" data-img="' + img.filename + '"></div>';
+
+    if (img.title) {
+      template += '<div class="caption"><p>' + img.title + '</p></div>';
+    } else if (img.play) {
+      template += '<div class="caption"><p>' + img.play + '</p></div>';
+    }
     
     $li.append(template);
     
@@ -130,6 +134,9 @@ Carly.home = function(){
       appendToCaption('director', 'p', 'directed by');
       appendToCaption('theater', 'p');
       appendToCaption('photographer', 'p', 'photograph by');
+    }
+    if ($caption.children().length === 0) {
+      $caption.remove();
     }
     $slides.append($slide);
   }

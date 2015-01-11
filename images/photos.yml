@@ -19,7 +19,6 @@
     bgPosition: "top right"
     filename: "cat-3.jpg"
   -
-    title: " "
     bgPosition: "center 20%"
     filename: "beatles.jpg"
   -
@@ -35,11 +34,9 @@
     theater: "Yale School of Drama"
     filename: "richard-ii-1.jpg"
   - 
-    title: " "
     bgPosition: "left center"
     filename: "nose-1.jpg"
   -
-    title: " "
     filename: "nose-2.jpg"
   -
     play: "Twelfth Night"
