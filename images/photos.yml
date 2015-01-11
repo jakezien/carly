@@ -18,7 +18,11 @@
     theater: "Chautauqua Theater Company"
     bgPosition: "top right"
     filename: "cat-3.jpg"
-  - 
+  -
+    title: " "
+    bgPosition: "center 20%"
+    filename: "beatles.jpg"
+  -
     play: "King Richard II"
     author: "William Shakespeare"
     director: "Dustin Wills"
@@ -31,6 +35,13 @@
     theater: "Yale School of Drama"
     filename: "richard-ii-1.jpg"
   - 
+    title: " "
+    bgPosition: "left center"
+    filename: "nose-1.jpg"
+  -
+    title: " "
+    filename: "nose-2.jpg"
+  -
     play: "Twelfth Night"
     author: "William Shakespeare"
     director: "Jessica Holt"

@@ -75,6 +75,7 @@ Carly.home = function(){
 
     for (var i in imgData) {
       var img = imgData[i];
+      console.log(img)
       addIndexPhoto(img);
       addLightboxPhoto(img);
     }
