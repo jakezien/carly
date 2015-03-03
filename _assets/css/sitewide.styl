@@ -12,11 +12,22 @@ footer
   padding-bottom 4em
 
   .container
-    text-align center
     height 100%
   
   #contact
     height 100%
+
+    > div
+      display flex
+      text-align left
+      justify-content space-around
+      flex-wrap wrap
+      box-sizing border-box
+      padding 0 1rem 1rem 1rem
+      
+      > div
+        min-width 360px
+        
 
     p
       GenathBold()
@@ -38,7 +49,7 @@ footer
         display 
         width: 36px;
         height: 36px;
-        margin 0 .5em
+        margin 0 .5em 0 0
         *
           transition fill 0.15s ease
           fill #7270B1 
@@ -59,16 +70,8 @@ footer
       GenathBold()
       SmallCaps()
       font-size 1.25em
-      margin 0.5em
-      opacity 0.66
-
-  .agency
-    width 46%
-    display inline-block
-    vertical-align top
-    
-  a 
-    
+      margin 0.5em 0
+      opacity 0.66    
 
 
 
@@ -80,8 +83,10 @@ footer
   100%
     background #B2D6B3
 
-@media screen and (max-width: 40em)
+
+@media screen and (max-width: 920px)
   footer 
-    #contact .agency
-      width 100%
-      margin-bottom 1em
+    #contact > div
+      text-align center
+      margin-bottom 2em
+      flex-direction column
