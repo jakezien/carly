@@ -32,7 +32,19 @@ footer
       transition 0.15s ease
       &:hover
         color #CED0E8
-
+      &.icon
+        display inline-block
+      svg
+        display 
+        width: 36px;
+        height: 36px;
+        margin 0 .5em
+        *
+          transition fill 0.15s ease
+          fill #7270B1 
+        &:hover 
+          *
+            fill #CED0E8
     h2
       GenathBold()
       font-size 3em
@@ -54,6 +66,10 @@ footer
     width 46%
     display inline-block
     vertical-align top
+    
+  a 
+    
+
 
 
 @keyframes loading-pulse
