@@ -3,7 +3,7 @@ layout: post
 title:  "Buzzer"
 ---
 
-Carly will be playing Suzy in Tracey Scott Wilson's new play _BUZZER_.
+I will be playing Suzy in Tracey Scott Wilson's new play _BUZZER_.
 The show will be at Cincinnati Playhouse in the Park from March 21–April 19th. For more details, [click here.](http://www.cincyplay.com/index.php?option=com_production&id=74)
 
 <!-- <div class="show">

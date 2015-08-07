@@ -73,7 +73,57 @@ footer
       margin 0.5em 0
       opacity 0.66    
 
-
+#mailchimp #mc_embed_signup
+  color #7270B1
+  Genath()
+  text-align center
+  h2
+    color #CED0E8
+    text-align center
+    margin 3rem auto 2rem auto
+  label
+    SmallCaps()
+    color #7270B1
+    font-size 1.25em
+    opacity 0.66    
+  input
+    transition all 0.15s ease
+  a
+    color #7270b1
+  input[type="email"], input[type="text"]
+    Genath()  
+    background transparent
+    border none
+    outline none
+    -webkit-appearance none
+    border-bottom 1px solid #7270b1
+    color #CED0E8
+    padding-left 0
+    text-align left
+    &:focus
+      background rgba(250,250,255,0.2)
+  input[type="submit"]
+    background transparent
+    border 1px solid #7270B1
+    border-radius 2px
+    color #CED0E8
+    GenathBold()
+    text-align center
+    margin 0 auto
+    height auto
+    font-size 1.5rem
+    padding 1rem auto
+    height 3rem
+    display block
+    width calc(100% - 1rem)
+    margin 1rem 0 0 0
+    &:hover
+      background #7270b1
+    &:active
+      background #CED0E8
+      color #7270b1
+  .clear
+    text-align center
 
 @keyframes loading-pulse
   0%
@@ -83,6 +133,19 @@ footer
   100%
     background #B2D6B3
 
+@media screen and (min-width: 768px)
+  #mailchimp #mc_embed_signup 
+    .mc-field-group
+      display inline-block
+      vertical-align top
+      width 29%
+      margin-right 2rem
+    input[type="submit"]
+      display inline-block
+      width 50%
+    
+
+    
 
 @media screen and (max-width: 920px)
   footer 

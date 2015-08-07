@@ -276,6 +276,8 @@ Carly.home = function(){
 
 };
 
+Carly.coaching = function(){};
+
 Carly.whichTransitionEvent = function(){
     var t;
     var el = document.createElement('fakeelement');
