@@ -2,7 +2,8 @@
   Genath()
   background #fafafd
   color #4A6650
-  
+  p, a, ul
+    font-size 1.1em
 
   h1
     color #59B55C
@@ -11,6 +12,33 @@
     
   strong
     margin-top 1rem
+
+  header  
+    // border-bottom 2px solid #59B55C
+    h1
+      margin-top 0
+      border-bottom 0
+      padding-bottom 0
+    a
+      text-decoration none
+      color #59B55C
+      border-bottom 2px solid
+      display inline-block
+      padding-bottom 1rem
+      width 100%
+      GenathBold()
+      font-size 1.5em
+      transition all 0.15s ease
+      span
+        font-weight 100
+        GenathDisplay()
+        font-size 0.75em
+        transition padding 0.5s ease, color 0.15s ease
+    a:hover
+      color #4A6650
+      span
+        padding-left 0.5em
+
 
   #top
     margin-bottom 1rem
@@ -21,17 +49,29 @@
       display inline-block
 
   #testimonials
-    .grid div 
+    background #CFE0CF
+    padding-bottom 3rem
+    .grid > div 
       margin-bottom 1rem
+      background #fafafd
+      margin-top .75rem
+      padding 2rem
+      p
+        margin-bottom 1rem
       &:first-letter
         float left
         padding 1rem .5rem .5rem
+        margin-left -.5rem
         GenathDisplay()
         font-size 3.25rem
+      i i
+        text-decoration underline
         
   #form
     padding 2rem 0
     text-align center
+    iframe
+      width 100%
 
 @media screen and (min-width: 40em)
   #coaching
@@ -39,27 +79,24 @@
       margin-bottom 4rem
     #degree, #essay, #audition
       margin-bottom 4rem
-      h1, >div
+      header, >div
         display inline-block
         vertical-align top
-      h1
+      header
         width 28%
-        margin-top 0
         padding-bottom 1.5rem
         margin-right 2rem
       > div
         width 66%
     
     #testimonials
-      background #CFE0CF
-      padding-bottom 3rem
       .grid > div
         width calc(50% - 6rem)
         display inline-block
         vertical-align top
-        background #fafafd
-        margin-top .75rem
-        padding 2rem
         float left
         &:nth-child(even)
           margin-right 2rem
+    
+    #form iframe
+      width 550px
