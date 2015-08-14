@@ -1,0 +1,65 @@
+#coaching
+  Genath()
+  background #fafafd
+  color #4A6650
+  
+
+  h1
+    color #59B55C
+    border-bottom 2px solid
+    padding-bottom 1rem
+    
+  strong
+    margin-top 1rem
+
+  #top
+    margin-bottom 1rem
+    h1
+      font-size 6em
+      margin-top 2rem
+      GenathDisplay()
+      display inline-block
+
+  #testimonials
+    .grid div 
+      margin-bottom 1rem
+      &:first-letter
+        float left
+        padding 1rem .5rem .5rem
+        GenathDisplay()
+        font-size 3.25rem
+        
+  #form
+    padding 2rem 0
+    text-align center
+
+@media screen and (min-width: 40em)
+  #coaching
+    #top
+      margin-bottom 4rem
+    #degree, #essay, #audition
+      margin-bottom 4rem
+      h1, >div
+        display inline-block
+        vertical-align top
+      h1
+        width 28%
+        margin-top 0
+        padding-bottom 1.5rem
+        margin-right 2rem
+      > div
+        width 66%
+    
+    #testimonials
+      background #CFE0CF
+      padding-bottom 3rem
+      .grid > div
+        width calc(50% - 6rem)
+        display inline-block
+        vertical-align top
+        background #fafafd
+        margin-top .75rem
+        padding 2rem
+        float left
+        &:nth-child(even)
+          margin-right 2rem
